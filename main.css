@@ -1,0 +1,18 @@
+header {
+    background-color: #79a3ca;
+    margin-top: 0;
+    margin-bottom: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.title {
+    color: #ffffff;
+    text-align: center;
+}
+#content {
+    width: 800px;
+    margin: auto;
+}
+.text-green {
+    color: green;
+}
