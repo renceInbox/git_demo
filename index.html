@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Site</title>
+    <style>
+        header {
+            background-color: #79a3ca;
+            margin-top: 0;
+            margin-bottom: 50px;
+            padding-top: 50px;
+            padding-bottom: 50px;
+        }
+        .title {
+            color: #ffffff;
+            text-align: center;
+        }
+        #content {
+            width: 800px;
+            margin: auto;
+        }
+        .text-green {
+            color: green;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 class="title">
+            Magic Space
+        </h1>
+    </header>
+    <section id="content">
+        <p>
+            Hi all! Welcome to my magic space here. Why is it magic you say?
+        </p>
+        <button type="button" id="clickMeElement" onclick="alert('You clicked the button!')">Click me to show alert dialog</button>
+        <p id="changeColorElement">
+            This is how to use javascript function. When you click this <button onclick="toggleTextColor()">button</button>, it will toggle the text color.
+        </p>
+        <div>
+            <p>This section is to calculate the speed of the earth in response to the number of mountains that is pick by the user and user's age</p>
+            <label for="idMountain">Number of mountain:</label>
+            <input type="number" id="idMountain" name="mountain">
+            <label for="idAge">Age:</label>
+            <input type="number" id="idAge" name="age">
+            <button type="button" onmouseover="calculateEarthSpeed()">Hover to calculate!</button>
+            <p>Earth's speed: <span  id="earthSpeedElement"></span></p>
+        </div>
+    </section>
+    <footer style="text-align: center; background-color: dimgray">All rights reserved to all of us</footer>
+    <!-- Always put your javascript scripts on the last part of the body to avoid blocking the DOM initialization unless you have a very good reason to do it -->
+    <script>
+        function toggleTextColor(){
+            // we just add a class here to its already existing list of classes
+            // we use toggle so that it will be remove in the 2nd click
+            document.getElementById('changeColorElement').classList.toggle('text-green')
+        }
+        function calculateEarthSpeed(){
+            // `var` is use to declare variables. `let` declares a variable that we can change the value later
+            // `const` declares a variable but cannot change the value later
+            let age = document.getElementById('idAge').value;
+            let mountainCount = document.getElementById('idMountain').value;
+            let earthSpeed = Math.sqrt(age) * Math.sqrt(mountainCount);
+            document.getElementById('earthSpeedElement').innerHTML = earthSpeed;
+        }
+    </script>
+</body>
+</html>
